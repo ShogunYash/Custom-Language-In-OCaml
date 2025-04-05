@@ -1,0 +1,39 @@
+// Test file for type checker with variable re-declaration prevention
+// and proper loop iterator scoping
+
+// Variable declarations
+let x := 10;
+let y := 3.14;
+let z := true;
+
+// This should cause a type error - variable already declared
+// x := 20;
+
+// Loop iterator variables
+let tmp := 0;
+for i := 1 to 10 do {
+  tmp := i * 2;
+  Print(tmp);
+}end
+
+// This should work - i from the loop is no longer in scope
+let i := "Hello";
+Print(i);
+
+// Nested loops with same iterator name (should work)
+for j := 1 to 5 do {
+  for k := 1 to 3 do {
+    Print("Inner loop");
+  }end
+  Print("Outer loop");
+}end
+
+// Using a variable with the same name as a loop iterator
+// This would cause an error if uncommented
+// for y := 1 to 10 do {
+//   Print(y);
+// }
+
+// This would be fine since the iterator is gone after the loop
+y := y +. 1.0;
+Print(y);

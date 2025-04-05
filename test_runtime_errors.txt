@@ -1,0 +1,41 @@
+// Test file demonstrating runtime errors
+
+// Division by zero
+let division_by_zero := 10 / 0;
+
+// Vector index out of bounds
+let v := 2
+[10, 20];
+let out_of_bounds := v[5];
+
+// Matrix access out of bounds
+let m := 2,2
+[[1,2],[3,4]];
+let mat_out_of_bounds := m[3, 1];
+
+// Modulo by zero
+let mod_zero := 10 mod 0;
+
+// Vector dimension mismatch in dot product
+let v1 := 2
+[1, 2];
+let v2 := 3
+[3, 4, 5];
+let bad_dot := v1 * v2;
+
+// Variable not defined (this would be caught by type checker)
+undefined_variable := 10;
+
+// Nested if with bad condition
+if true then {
+  if 10 then {
+    Print("Bad nested condition");
+  } end
+} end
+
+// Float division by zero
+let float_div_zero := 10.5 /. 0.0;
+
+// Matrix with incorrect dimensions
+let bad_matrix := 3,2
+[[1,2],[3,4]];  // Should have 3 rows but only has 2

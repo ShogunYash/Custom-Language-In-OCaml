@@ -1,0 +1,51 @@
+// Test file to demonstrate for loop iterator variable scoping
+
+// First try to use an iterator variable before the loop - should fail
+Print("Before first loop:");
+// This would fail if uncommented because i is not defined yet
+// Print(i);
+
+// Loop with iterator i
+Print("Loop 1 with iterator i:");
+for i := 1 to 5 do {
+  Print(i);
+}end
+
+// Try to use i after the loop - should fail
+Print("After first loop:");
+// This would fail if uncommented because i is no longer in scope
+// Print(i);
+
+// Declare a variable with the same name as a loop iterator
+Print("Declaring variable i:");
+let i := 100;
+Print(i);
+
+// New loop with the same iterator name
+Print("Loop 2 with same iterator i:");
+for j := 10 to 15 do {
+  Print(j);
+}end
+
+// Check that our original i still exists and wasn't overwritten
+Print("After second loop, i should still be 100:");
+Print(i);
+
+// Nested loops to check scoping
+Print("Nested loops with same iterator name:");
+for j := 1 to 3 do {
+  Print("Outer loop j:");
+  Print(j);
+  
+  for k := 10 to 12 do {
+    Print("Inner loop k:");
+    Print(k);
+  }end
+  
+  Print("Back to outer loop j:");
+  Print(j);
+}end
+
+// Final check of our variable
+Print("Final value of i:");
+Print(i);

@@ -1,0 +1,68 @@
+// Test file to demonstrate new variable declaration syntax
+
+// Variable declarations using the new 'let' keyword
+let x := 10;
+let y := 3.14;
+let z := true;
+
+// Print initial values
+Print("Initial values:");
+Print(x);
+Print(y);
+Print(z);
+
+// Regular assignments to update values
+x := 20;
+y := 6.28;
+z := false;
+
+// Print updated values
+Print("After updates:");
+Print(x);
+Print(y);
+Print(z);
+
+// Type checking should enforce types
+// This would cause an error if uncommented
+// x := 3.14;  // Cannot assign float to int
+
+// Variable must be declared before assignment
+// This would cause an error if uncommented
+// w := 100;   // w is not declared
+
+// Cannot declare a variable twice
+// This would cause an error if uncommented
+// let x := 30;  // x is already declared
+
+// Vector and matrix declarations
+let v := 3
+[1,2,3];
+Print("Vector v:");
+Print(v);
+
+// Nested scopes - for loop
+let sum := 0;
+let temp := 0;
+for i := 1 to 5 do {
+  // let declarations inside loops
+  temp := i * i;
+  sum := sum + temp;
+}end
+Print("Sum of squares:");
+Print(sum);
+
+// Assignment in conditionals
+let a := 10;
+if a > 5 then {
+  a := 1;
+  let b := 2;
+  Print("Inside if:");
+  Print(a);
+  Print(b);
+} else {
+  a := -1;
+} end
+Print("After if:");
+Print(a);
+// This would cause an error if uncommented because b is not in scope
+// Print(b);

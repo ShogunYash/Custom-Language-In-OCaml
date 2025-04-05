@@ -1,0 +1,25 @@
+// Test file to demonstrate variable re-declaration prevention
+
+// First declaration - valid
+let x := 10;
+Print("First declaration of x:");
+Print(x);
+
+// Re-assignment - valid
+x := 20;
+Print("Re-assignment of x:");
+Print(x);
+
+// Another variable - valid
+let y := 30;
+Print("Declaration of y:");
+Print(y);
+
+// Re-declaration of x - this should cause an error
+x := 50;
+Print("This line should not be executed");
+
+// More code that won't execute due to the error
+let z := x + y;
+Print("Value of z: \n");
+Print(z);

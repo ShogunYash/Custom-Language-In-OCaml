@@ -1,0 +1,161 @@
+// Test file containing various error cases to demonstrate error handling
+
+// ==========================================
+// Section 1: Lexical Errors
+// ==========================================
+
+// Invalid character in identifier
+let @invalid_id := 10;
+
+// Invalid number format
+let bad_number := 3.5.6;
+
+// Invalid string - unterminated
+let unterminated_string := "This string doesn't end;
+
+// Invalid operator sequence
+let invalid_op := 5 ++ 3;
+
+// Invalid float syntax
+let bad_float := 5.;
+
+// ==========================================
+// Section 2: Syntax/Parsing Errors
+// ==========================================
+
+// Missing semicolon
+let x := 10
+
+// Missing right brace in if statement
+if x > 5 then { Print(x); else { Print("Error"); } end
+
+// Missing end keyword in for loop
+for i := 1 to 10 do { Print(i); }
+
+// Invalid vector declaration - missing size
+let v := [1, 2, 3];
+
+// Invalid matrix declaration - missing dimensions
+let m := [[1, 2], [3, 4]];
+
+// Mismatched parentheses
+let y := (5 + 3 * (4 - 1;
+
+// Invalid assignment - missing value
+let z :=;
+
+// Invalid declaration - missing identifier
+let := 10;
+
+// ==========================================
+// Section 3: Type Errors
+// ==========================================
+
+// Mismatched types in assignment
+let int_var := 5;
+int_var := true;
+
+// Mismatched types in binary operation
+let mix_types := 3 + true;
+
+// Invalid vector addition - different dimensions
+let vec1 := 2[1, 2];
+let vec2 := 3[3, 4, 5];
+let bad_add := vec1 + vec2;
+
+// Invalid matrix multiplication dimensions
+let mat1 := 2,3[[1,2,3],[4,5,6]];
+let mat2 := 2,2[[1,2],[3,4]];
+let bad_mul := mat1 * mat2;
+
+// Invalid indexing - using non-integer
+let v := 3[1, 2, 3];
+let bad_idx := v[true];
+
+// Invalid determinant - non-square matrix
+let non_square := 2,3[[1,2,3],[4,5,6]];
+let bad_det := det(non_square);
+
+// Redeclaration of variable
+let redeclared := 10;
+let redeclared := 20;
+
+// Invalid if condition - not a boolean
+if 5 then { Print("Error"); } else { Print("OK"); } end
+
+// ==========================================
+// Section 4: Runtime Errors
+// ==========================================
+
+// Division by zero
+let division_by_zero := 10 / 0;
+
+// Vector index out of bounds
+let v := 2[10, 20];
+let out_of_bounds := v[5];
+
+// Matrix access out of bounds
+let m := 2,2[[1,2],[3,4]];
+let mat_out_of_bounds := m[3, 1];
+
+// Invalid argument to determinant
+let empty_matrix := 0,0[[]];
+let bad_det := det(empty_matrix);
+
+// Modulo by zero
+let mod_zero := 10 mod 0;
+
+// Vector dimension mismatch in dot product
+let v1 := 2[1, 2];
+let v2 := 3[3, 4, 5];
+let bad_dot := v1 * v2;
+
+// Variable not defined
+undefined_variable := 10;
+
+// Assigning to undeclared variable
+undeclared := 10;
+
+// Variable access before declaration
+let before_declaration := x + 5;
+let x := 10;
+
+// Nested if with bad condition
+if true then {
+  if 10 then {
+    Print("Bad nested condition");
+  } end
+} end
+
+// Accessing matrix as vector
+let matrix := 2,2[[1,2],[3,4]];
+let element := matrix[1];
+
+// Trying to do operations on incompatible types
+let s := "string";
+let n := 10;
+let bad_op := s + n;
+
+// Invalid cast attempt
+let bad_cast := int_to_float("string");
+
+// ==========================================
+// Section 5: Other Edge Cases
+// ==========================================
+
+// Empty program - should be valid but do nothing
+
+// Just comments - also valid
+// This is just a comment
+/* Multi-line
+   comment only */
+
+// Valid but deeply nested expressions to test parser robustness
+let deep_nesting := ((((((5 * 2) + 3) - 1) / 2) mod 3) * 4);
+
+// Large numbers to test numeric limits
+let big_num := 9999999999;
+let small_float := 0.0000000001;
+
+// Very large input that might cause buffer issues
+let big_string := "This is a very long string that continues for many characters to test if your lexer and interpreter can handle long inputs without buffer overflows or other memory-related issues";

@@ -1,0 +1,28 @@
+// Test file demonstrating parsing/syntax errors
+
+// Missing semicolon
+let x := 10
+
+// Missing right brace in if statement
+if x > 5 then { Print(x); else { Print("Error"); } end
+
+// Missing end keyword in for loop
+for i := 1 to 10 do { Print(i); }
+
+// Invalid vector declaration - missing size
+let v := [1, 2, 3];
+
+// Invalid matrix declaration - missing dimensions
+let m := [[1, 2], [3, 4]];
+
+// Mismatched parentheses
+let y := (5 + 3 * (4 /- 1;
+
+// Invalid assignment - missing value
+let z :=;
+
+// Invalid declaration - missing identifier
+let := 10;
+
+// Mismatched brackets
+let mat := 2,2[[1,2],[3,4];

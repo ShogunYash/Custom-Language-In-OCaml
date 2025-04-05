@@ -1,0 +1,19 @@
+// Test file demonstrating lexical errors
+
+// Invalid character in identifier
+let @invalid_id := 10;
+
+// Invalid number format
+let bad_number := 3.5.6;
+
+// Invalid string - unterminated
+let unterminated_string := "This string doesn't end;
+
+// Invalid operator sequence
+let invalid_op := 5 ++ 3;
+
+// Invalid character in the middle of an identifier
+let my$var := 42;
+
+// Invalid float syntax
+let bad_float := 5.;

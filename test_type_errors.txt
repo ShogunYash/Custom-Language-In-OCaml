@@ -1,0 +1,38 @@
+// Test file demonstrating type checking errors
+
+// Mismatched types in assignment
+let int_var := 5;
+int_var := true;
+
+// Mismatched types in binary operation
+let mix_types := 3 + true;
+
+// Invalid vector addition - different dimensions
+let vec1 := 2
+[1,2];
+let vec2 := 3
+[3,4,5];
+let bad_add := vec1 + vec2;
+
+// Invalid matrix multiplication dimensions
+let mat1 := 2,3
+[[1,2,3],[4,5,6]];
+let mat2 := 2,2
+[[1,2],[3,4]];
+let bad_mul := mat1 * mat2;
+
+// Invalid indexing - using non-integer
+let v := 3
+[1,2,3];
+let bad_idx := v[true];
+
+// Invalid determinant - non-square matrix
+let non_square := 2,3
+[[1,2,3],[4,5,6]];
+let bad_det := det(non_square);
+
+// Redeclaration of variable
+let redeclared := 10;
+
+// Invalid if condition - not a boolean
+if 5 then { Print("Error"); } else { Print("OK"); } end

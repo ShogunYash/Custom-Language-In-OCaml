@@ -1,0 +1,114 @@
+// Test file for matrix operations: multiplication, transpose, determinant
+
+// Basic matrix declarations
+let m1 := 2,2
+[[1,2],[3,4]];
+
+let m2 := 2,2
+[[5,6],[7,8]];
+
+let m3 := 2,3
+[[1,2,3],[4,5,6]];
+
+let m4 := 3,2
+[[7,8],[9,10],[11,12]];
+
+// Matrix addition
+Print("Matrix addition:");
+Print(m1);
+Print("+");
+Print(m2);
+let add_result := m1 + m2;
+Print("=");
+Print(add_result);
+
+// Matrix multiplication
+Print("Matrix multiplication:");
+Print(m1);
+Print("*");
+Print(m2);
+let mul_result := m1 * m2;
+Print("=");
+Print(mul_result);
+
+// Matrix-vector multiplication
+Print("Matrix-vector multiplication:");
+let v1 := 2
+[1,2];
+Print(m1);
+Print("*");
+Print(v1);
+let mat_vec_result := m1 * v1;
+Print("=");
+Print(mat_vec_result);
+
+// Matrix transpose
+Print("Matrix transpose:");
+Print(m3);
+Print("Transposed:");
+let trp_r := trp(m3);
+Print(trp_r);
+
+// Matrix determinant
+Print("Matrix determinant:");
+Print(m1);
+let det_result := det(m1);
+Print("Determinant =");
+Print(det_result);
+
+// Larger matrix for determinant
+let m5 := 3,3
+[[1,2,3],[4,5,6],[7,8,9]];
+Print("Determinant of 3x3 matrix:");
+Print(m5);
+Print("=");
+Print(det(m5));
+
+// Scalar multiplication
+Print("Scalar multiplication:");
+Print("2 *");
+Print(m1);
+Print("=");
+Print(2 * m1);
+
+// Matrix dimensions
+Print("Matrix dimensions:");
+Print(m1);
+Print("Dimensions:");
+Print(dim(m1));
+
+// Row access
+Print("Row access:");
+Print(m3);
+Print("Row 1:");
+Print(row_access(m3, 1));
+
+// Element access
+Print("Element access:");
+Print(m3);
+Print("Element[0,1]:");
+Print(m3[0,1]);
+
+// Float matrix operations
+let fm1 := 2,2
+[[1.5,2.5],[3.5,4.5]];
+
+Print("Float matrix determinant:");
+Print(fm1);
+Print("=");
+Print(det(fm1));
+
+// Matrix subtraction
+Print("Matrix subtraction:");
+Print(m2);
+Print("-");
+Print(m1);
+let sub_result := m2 /- m1;
+Print("=");
+Print(sub_result);
+
+// Chain of operations
+Print("Chain of operations:");
+Print("(m1 * m2) + m1:");
+let chain_result := (m1 * m2) + m1;
+Print(chain_result);
